@@ -1,0 +1,46 @@
+Report: Maximum Depth of Decision Tree
+
+Author: [Your Name]
+Date: [Today's Date]
+
+-----------------------------
+Problem Overview:
+-----------------------------
+We are calculating the maximum depth of a binary tree that represents a decision support system for financial product recommendations. Each node is a question, and each branch represents a Yes/No response.
+
+-----------------------------
+Solution Approach:
+-----------------------------
+We use a recursive Depth-First Search (DFS) approach to calculate the depth.
+
+Function:
+- max_depth(root)
+    - If the root is None, return 0
+    - Recursively calculate the max depth of left and right subtrees
+    - Return 1 + the maximum of the two
+
+-----------------------------
+Time Complexity:
+-----------------------------
+O(n), where n is the number of nodes in the binary tree.
+- Every node is visited exactly once.
+
+-----------------------------
+Space Complexity:
+-----------------------------
+O(h), where h is the height of the tree.
+- Due to the recursion call stack.
+- Best case (balanced tree): O(log n)
+- Worst case (skewed tree): O(n)
+
+-----------------------------
+Optimizations:
+-----------------------------
+The current recursive DFS solution is optimal in both time and space for this problem. 
+An iterative version using a queue (Breadth-First Search) would offer the same time complexity but could be more memory intensive for wide trees.
+
+-----------------------------
+Trade-offs:
+-----------------------------
+Recursive DFS is easier to implement and more readable, but deep trees could hit recursion limits. 
+An iterative approach avoids recursion depth issues but is slightly more complex to implement.
